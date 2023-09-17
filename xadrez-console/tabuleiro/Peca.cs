@@ -17,13 +17,35 @@
             Cor = cor;         
             //QteMovimento serve para contar quantas vezes foi movida. Útil pro peão no inicio do jogo.
             QteMovimento = 0;
-        }
-
-        public abstract bool[,] MovimentosPossiveis();
+        }      
 
         public void IncrementarQteMovimentos()
         {
             QteMovimento++;
         }
+
+        //verificar se a peça está bloqueada
+        public bool ExisteMovimentosPossiveis()
+        {
+            bool[,] mat = MovimentosPossiveis();
+            for (int i = 0; i < Tab.Linhas; i++)
+            {
+                for (int j = 0; j < Tab.Linhas; j++)
+                {
+                    if (mat[i, j])
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public bool PodeMoverPara(Posicao pos)
+        {
+            return MovimentosPossiveis()[pos.Linha, pos.Coluna];
+        }
+
+        public abstract bool[,] MovimentosPossiveis();
     }
 }
