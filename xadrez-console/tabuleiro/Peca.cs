@@ -1,6 +1,6 @@
 ﻿namespace tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
 
         public Posicao Posicao { get; set; }
@@ -18,6 +18,8 @@
             //QteMovimento serve para contar quantas vezes foi movida. Útil pro peão no inicio do jogo.
             QteMovimento = 0;
         }
+
+        public abstract bool[,] MovimentosPossiveis();
 
         public void IncrementarQteMovimentos()
         {
