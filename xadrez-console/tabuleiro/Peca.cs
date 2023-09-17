@@ -18,5 +18,10 @@
             //QteMovimento serve para contar quantas vezes foi movida. Útil pro peão no inicio do jogo.
             QteMovimento = 0;
         }
+
+        public void IncrementarQteMovimentos()
+        {
+            QteMovimento++;
+        }
     }
 }
