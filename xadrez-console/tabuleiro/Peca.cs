@@ -11,11 +11,9 @@
 
         public Peca(Tabuleiro tab,Cor cor)
         {
-            //Quando se cria uma peça, a posição dela é nula
             Posicao = null;
             Tab = tab;
             Cor = cor;         
-            //QteMovimento serve para contar quantas vezes foi movida. Útil pro peão no inicio do jogo.
             QteMovimento = 0;
         }      
 
